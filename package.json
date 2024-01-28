@@ -14,10 +14,11 @@
   "keywords": [],
   "author": "Sergey Fomin",
   "license": "MIT",
-  "private" : false,
+  "private": false,
   "devDependencies": {
-    "@changesets/cli": "^2.27.1", 
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.11.9",
+    "prettier": "3.2.4",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
