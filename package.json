@@ -30,5 +30,11 @@
     "prettier": "3.2.4",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "glob": "^10.3.10",
+    "sass-formatter": "^0.7.9",
+    "sast": "^0.8.1",
+    "scssfmt": "^1.0.7"
   }
 }

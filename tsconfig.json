@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016",                                 
-    "esModuleInterop": true,                           
-    "forceConsistentCasingInFileNames": true,            
-    "strict": true,                                     
+    "target": "es2021",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "Node",
+    "allowJs": true
   }
 }
