@@ -8,12 +8,15 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "pnpm run lint && pnpm run build"
+    "ci": "pnpm run lint && pnpm run build",
+    "release": "pnpm run ci && changeset publish"
   },
   "keywords": [],
   "author": "Sergey Fomin",
   "license": "MIT",
+  "private" : false,
   "devDependencies": {
+    "@changesets/cli": "^2.27.1", 
     "@types/node": "^20.11.9",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
