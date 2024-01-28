@@ -1,6 +1,11 @@
 {
   "name": "@ruslanuz/sass-convert",
   "version": "0.0.0",
+  "homepage": "https://github.com/ruslauz/sass-convert",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruslauz/sass-convert.git"
+  },
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -11,7 +16,11 @@
     "ci": "pnpm run lint && pnpm run build",
     "release": "pnpm run ci && changeset publish"
   },
-  "keywords": [],
+  "keywords": [
+    "sass",
+    "scss",
+    "converter"
+  ],
   "author": "Sergey Fomin",
   "license": "MIT",
   "private": false,
