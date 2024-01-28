@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "pnmp run lint && pnpm run build"
+    "ci": "pnpm run lint && pnpm run build"
   },
   "keywords": [],
   "author": "Sergey Fomin",
