@@ -1,5 +1,11 @@
 # @ruslanuz/sass-convert
 
+## 0.1.1
+
+### Patch Changes
+
+- aa5c996: Adds README
+
 ## 0.1.0
 
 ### Minor Changes
