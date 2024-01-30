@@ -14,13 +14,13 @@ type Option = {
 }
 
 const config = {
-    [Syntax.Scss]: {
-        converter: convertScssToSass,
-        targetExtension: Syntax.Sass
-    },
     [Syntax.Sass]: {
+        converter: convertScssToSass,
+        extension: Syntax.Scss
+    },
+    [Syntax.Scss]: {
         converter: convertSassToScss,
-        targetExtension: Syntax.Scss
+        extension: Syntax.Sass
     }
 }
 
@@ -38,12 +38,12 @@ export function convert(pattern: string | string[], options: Option) {
     globStream(pattern).on('data', file => {
         try {
             const content = fs.readFileSync(file).toString();
-            const { converter, targetExtension } = config[syntax]
+            const { converter, extension } = config[syntax]
 
             const formattedContent = converter(content);
 
             fs.writeFileSync(file, formattedContent);
-            fs.renameSync(file, file.replace(`.${syntax}`, targetExtension));
+            fs.renameSync(file, file.replace(`.${extension}`, `.${syntax}`));
         } catch (error) {
             console.log(`Could not convert ${file}`);
             console.error(error);

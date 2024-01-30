@@ -10,19 +10,17 @@ import { cssVariableHack } from './cssVariableHack';
 import sast from 'sast';
 
 export function convertScssToSass(scssStr: string): string {
-    const tree = sast.parse(`${formatScss(scssStr.trim())}\n\n`, { syntax: 'scss' });
+    const ast = sast.parse(`${formatScss(scssStr.trim())}\n\n`, { syntax: 'scss' });
 
-    traverseAst(tree, (node) => delete node.position);
-
-    traverseAst(tree, removeSemicolon);
-    traverseAst(tree, interpolationHack);
-    traverseAst(tree, fixIdentation);
-    traverseAst(tree, (node: any) => {
+    traverseAst(ast, (node) => delete node.position);
+    traverseAst(ast, removeSemicolon);
+    traverseAst(ast, interpolationHack);
+    traverseAst(ast, fixIdentation);
+    traverseAst(ast, (node: any) => {
         node.type = node.type === 'block' ? '_block' : node.type;
     });
-    traverseAst(tree, placeholderHack);
-    traverseAst(tree, cssVariableHack);
+    traverseAst(ast, placeholderHack);
+    traverseAst(ast, cssVariableHack);
 
-    const stringifiedTree = removeTrailingSpacesForEachLine(sast.stringify(tree).trim());
-    return stringifiedTree;
+    return removeTrailingSpacesForEachLine(sast.stringify(ast).trim());
 }

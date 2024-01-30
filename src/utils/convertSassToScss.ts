@@ -19,9 +19,7 @@ import sast from 'sast';
 export function convertSassToScss(sassStr: string): string {
     const cleanedUpSassStr = removeTrailingSpacesForEachLine(sassStr);
     const ast = sast.parse(`${cleanedUpSassStr}\n\n`, { syntax: 'sass' });
-
     traverseAst(ast, (node) => delete node.position);
-
     traverseAst(ast, sassMixinIncludeHack);
     traverseAst(ast, sassMixinDefinitionHack);
     traverseAst(ast, addSemicolon);

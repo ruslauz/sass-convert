@@ -11,7 +11,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "lint": "tsc",
     "ci": "pnpm run lint && pnpm run build",
     "release": "pnpm run ci && changeset publish"
